@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+$negative-color: #D33F49;
+$positive-color: #49A078;
+$primary-color: #216869;
+$background-color: #F4F6F5;
+
+$font-stack: 'Lato', sans-serif;
+
+:export {
+    positiveColor: $positive-color;
+    negativeColor: $negative-color;
+}
