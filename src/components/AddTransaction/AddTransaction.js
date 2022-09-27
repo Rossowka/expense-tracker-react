@@ -1,5 +1,9 @@
 import { React } from 'react';
 import { useForm } from 'react-hook-form';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleUp, faCircleDown } from '@fortawesome/free-solid-svg-icons'
+
+import './styles.scss';
 
 function AddTransaction() {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -17,16 +21,20 @@ function AddTransaction() {
         <div>
             <h3>Add new transaction</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
+                <div className='type'>
+                    <label htmlFor='outflow'><FontAwesomeIcon icon={faCircleUp} />Expense</label>
                     <input
                         {...register('type', {required: true})}
                         type='radio'
                         value='outflow'
+                        name='outflow'
                     />
+                    <label htmlFor='inflow'><FontAwesomeIcon icon={faCircleDown} />Income</label>
                     <input
                         {...register('type', {required: true})}
                         type='radio'
                         value='inflow'
+                        name='inflow'
                     />
                 </div>
                 <input

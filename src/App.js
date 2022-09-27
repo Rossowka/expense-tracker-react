@@ -1,5 +1,10 @@
 import './App.scss';
-import { Header, Balance, IncomeExpenses, AddTransaction, List } from './components';
+
+import { Header } from './components/Header';
+import { Balance } from './components/Balance';
+import { IncomeExpenses } from './components/IncomeExpenses';
+import { AddTransaction } from './components/AddTransaction';
+import { List } from './components/List';
 
 function App() {
   return (

@@ -16,7 +16,7 @@ function List() {
                         <h6>Income</h6>
                     </div>
                     <div>
-                        €1800
+                        <p>€1800</p>
                     </div>
                     <button>x</button>
                 </li>

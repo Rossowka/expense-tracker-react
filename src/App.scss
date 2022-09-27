@@ -1,11 +1,11 @@
-@import './styles/base';
+@import 'base';
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: $background-color;
+  background-color: $light-color;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,4 +13,22 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: $font-stack;
+}
+
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.plus {
+  color: $positive-color;
+}
+
+.minus {
+  color: $negative-color;
 }
