@@ -6,36 +6,37 @@ import { faCircleUp, faCircleDown } from '@fortawesome/free-solid-svg-icons'
 import './styles.scss';
 
 function AddTransaction() {
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, watch, formState: { errors } } = useForm({
         defaultValues: {
-            type: '',
+            type: 'outflow',
             payee: '',
             amount: '',
             category: ''
         }
     });
     const onSubmit = data => console.log(data);
-    console.log(errors);
 
     return (
         <div>
             <h3>Add new transaction</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='type'>
-                    <label htmlFor='outflow'><FontAwesomeIcon icon={faCircleUp} />Expense</label>
                     <input
                         {...register('type', {required: true})}
                         type='radio'
                         value='outflow'
-                        name='outflow'
+                        id='outflow'
+                        checked={watch('type') === 'outflow'}
                     />
-                    <label htmlFor='inflow'><FontAwesomeIcon icon={faCircleDown} />Income</label>
+                    <label htmlFor='outflow'><FontAwesomeIcon icon={faCircleUp} />Expense</label>
                     <input
                         {...register('type', {required: true})}
                         type='radio'
                         value='inflow'
-                        name='inflow'
+                        id='inflow'
+                        checked={watch('type') === 'inflow'}
                     />
+                    <label htmlFor='inflow'><FontAwesomeIcon icon={faCircleDown} />Income</label>
                 </div>
                 <input
                     {...register('payee', {required: true, maxLength: 30})}
