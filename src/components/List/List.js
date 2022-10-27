@@ -9,7 +9,7 @@ function List() {
         <div>
             <h3>Transactions</h3>
             {/* -- Dummy Data -- */}
-
+{/* 
             <dl>
                 <div className='icon'>
                     <FontAwesomeIcon icon={faCoins} size="xl"/>
@@ -35,13 +35,29 @@ function List() {
                     <dd>Immediate Obligations</dd>
                 </div>
                 <div className='money negative'>
-                    <dt>-€800</dt>
+                    <dt>-€600</dt>
                 </div>
                 <button>
                     <FontAwesomeIcon icon={faTrashCan} size="sm"/>
                 </button>
             </dl>
-            
+
+            <dl>
+                <div className='icon'>
+                    <FontAwesomeIcon icon={faHouse} size="xl"/>
+                </div>
+                <div className='text'>
+                    <dt>Utilities</dt>
+                    <dd>Immediate Obligations</dd>
+                </div>
+                <div className='money negative'>
+                    <dt>-€200</dt>
+                </div>
+                <button>
+                    <FontAwesomeIcon icon={faTrashCan} size="sm"/>
+                </button>
+            </dl>
+              */}
         </div>
     )
 }

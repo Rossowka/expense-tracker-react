@@ -37,18 +37,6 @@ dd {
     opacity: 0.4;
 }
 
-.money {
-    align-self: center;
-
-    &.positive {
-        color: $positive-color;
-    }
-
-    &.negative {
-        color: $negative-color;
-    }
-}
-
 button {
     border-radius: 50%;
     background-color: #fff;

@@ -25,10 +25,51 @@ h4 {
   text-transform: uppercase;
 }
 
-.plus {
-  color: $positive-color;
+.money {
+  align-self: center;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+
+  &.positive {
+      color: $positive-color;
+  }
+
+  &.negative {
+      color: $negative-color;
+  }
 }
 
-.minus {
-  color: $negative-color;
+.type {
+  background-color: $dark-grey;
+  border-radius: $border-radius;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 2px;
+  box-shadow: $box-shadow;
+
+  & > label {
+      flex: 1;
+      text-align: center;
+      cursor: pointer;
+      padding: 8px;
+      opacity: 0.5;
+      transition: all 0.3s ease 0s;
+  }
+
+  svg {
+      margin: 0 15px;
+  }
+}
+
+input[type='radio'] {
+  display: none;
+
+  &:checked + label {
+      background-color: #fff;
+      border-radius: $border-radius;
+      color: $primary-color;
+      opacity: 1;
+  }
 }

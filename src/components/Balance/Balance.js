@@ -1,10 +1,12 @@
 import React from 'react';
 
-function Balance() {
+import styles from './Balance.module.scss';
+
+function Balance({ balance }) {
   return (
     <div>
         <h4>Your Balance</h4>
-        <h1>€ 0.00</h1>
+        <h1 style={{color: balance < 0 ? styles.negativeColor : styles.positiveColor}}>€ {balance}</h1>
     </div>
   )
 }

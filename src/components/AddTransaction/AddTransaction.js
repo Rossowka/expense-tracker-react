@@ -3,8 +3,6 @@ import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUp, faCircleDown } from '@fortawesome/free-solid-svg-icons'
 
-import './styles.scss';
-
 function AddTransaction() {
     const { register, handleSubmit, watch } = useForm({
         defaultValues: {
@@ -15,7 +13,12 @@ function AddTransaction() {
         }
     });
     const onSubmit = data => console.log(data);
-    console.log(watch('type'));
+
+    // const payee = watch('payee');
+    // const amount = watch('amount');
+    // const category = watch('category');
+
+    // console.log(payee, amount, category);
 
     return (
         <div>
