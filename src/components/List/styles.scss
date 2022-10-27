@@ -1,0 +1,66 @@
+@import '../../base';
+
+.icon {
+    color: $primary-color;
+    background-color: rgba( $primary-color, 0.5 );
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+dl {
+    background-color: #fff;
+    border-radius: $border-radius;
+    display: flex;
+    margin: 20px 0;
+    padding: 10px;
+    box-shadow: $box-shadow;
+    position: relative;
+}
+
+.text {
+    padding-left: 10px;
+    align-self: center;
+    flex: 1;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0;
+    opacity: 0.4;
+}
+
+.money {
+    align-self: center;
+
+    &.positive {
+        color: $positive-color;
+    }
+
+    &.negative {
+        color: $negative-color;
+    }
+}
+
+button {
+    border-radius: 50%;
+    background-color: #fff;
+    color: $negative-color;
+    height: 25px;
+    width: 25px;
+    align-self: center;
+    margin-left: 15px;
+    border: none;
+    flex: 0.2;
+
+    &:hover {
+        background-color: rgba($dark-grey, 0.5);
+    }
+}

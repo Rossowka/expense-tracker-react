@@ -6,7 +6,7 @@ import { faCircleUp, faCircleDown } from '@fortawesome/free-solid-svg-icons'
 import './styles.scss';
 
 function AddTransaction() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm({
+    const { register, handleSubmit, watch } = useForm({
         defaultValues: {
             type: 'outflow',
             payee: '',
@@ -15,6 +15,7 @@ function AddTransaction() {
         }
     });
     const onSubmit = data => console.log(data);
+    console.log(watch('type'));
 
     return (
         <div>
