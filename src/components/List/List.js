@@ -1,63 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoins, faTrashCan, faHouse } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { GlobalContext } from '../../context/GlobalState';
+import Icon from './Icon';
 
 import './styles.scss';
 
 function List() {
+    const { transactions } = useContext(GlobalContext);
+
     return (
         <div>
             <h3>Transactions</h3>
-            {/* -- Dummy Data -- */}
-{/* 
             <dl>
-                <div className='icon'>
-                    <FontAwesomeIcon icon={faCoins} size="xl"/>
-                </div>
-                <div className='text'>
-                    <dt>Salary</dt>
-                    <dd>Income</dd>
-                </div>
-                <div className='money positive'>
-                    <dt>€1800</dt>
-                </div>
-                <button>
-                    <FontAwesomeIcon icon={faTrashCan} size="sm"/>
-                </button>
+                {transactions.map(transaction => (
+                    <div className='element'>
+                        <Icon category={transaction.category} />
+                        <div className='text'>
+                            <dt>{transaction.payee}</dt>
+                            <dd>{transaction.category}</dd>
+                        </div>
+                        <div
+                            className='money'
+                            style={{color: transaction.amount < 0 ? 'red' : 'green'}}
+                        >
+                            <dt>€{transaction.amount}</dt>
+                        </div>
+                        <button>
+                            <FontAwesomeIcon icon={faTrashCan} size="sm"/>
+                        </button>
+                    </div>
+                ))}
             </dl>
-
-            <dl>
-                <div className='icon'>
-                    <FontAwesomeIcon icon={faHouse} size="xl"/>
-                </div>
-                <div className='text'>
-                    <dt>Rent</dt>
-                    <dd>Immediate Obligations</dd>
-                </div>
-                <div className='money negative'>
-                    <dt>-€600</dt>
-                </div>
-                <button>
-                    <FontAwesomeIcon icon={faTrashCan} size="sm"/>
-                </button>
-            </dl>
-
-            <dl>
-                <div className='icon'>
-                    <FontAwesomeIcon icon={faHouse} size="xl"/>
-                </div>
-                <div className='text'>
-                    <dt>Utilities</dt>
-                    <dd>Immediate Obligations</dd>
-                </div>
-                <div className='money negative'>
-                    <dt>-€200</dt>
-                </div>
-                <button>
-                    <FontAwesomeIcon icon={faTrashCan} size="sm"/>
-                </button>
-            </dl>
-              */}
         </div>
     )
 }

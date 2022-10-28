@@ -12,7 +12,7 @@
     margin: 0 10px;
 }
 
-dl {
+.element {
     background-color: #fff;
     border-radius: $border-radius;
     display: flex;
@@ -46,7 +46,6 @@ button {
     align-self: center;
     margin-left: 15px;
     border: none;
-    flex: 0.2;
 
     &:hover {
         background-color: rgba($dark-grey, 0.5);
