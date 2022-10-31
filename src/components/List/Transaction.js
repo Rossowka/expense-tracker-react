@@ -7,6 +7,8 @@ import './styles.scss';
 import styles from './../../_base.module.scss';
 
 function Transaction({ transaction }) {
+    const sign = transaction.amount < 0 ? '-' : '+';
+
     return (
         <div className='element'>
             <Icon category={transaction.category} />
@@ -17,7 +19,7 @@ function Transaction({ transaction }) {
             <div
                 className='money'
                 style={{color: transaction.amount < 0 ? styles.negativeColor : styles.positiveColor}}>
-                <dt>€{transaction.amount}</dt>
+                <dt>{sign}€{Math.abs(transaction.amount)}</dt>
             </div>
             <button>
                 <FontAwesomeIcon icon={faTrashCan} size="sm"/>
