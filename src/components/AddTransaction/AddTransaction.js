@@ -1,9 +1,12 @@
-import { React } from 'react';
+import { React, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUp, faCircleDown } from '@fortawesome/free-solid-svg-icons'
+import { GlobalContext } from '../../context/GlobalState';
 
 function AddTransaction() {
+    const { addTransaction } = useContext(GlobalContext);
+
     const { register, handleSubmit, watch, reset } = useForm({
         defaultValues: {
             type: 'outflow',
@@ -14,7 +17,16 @@ function AddTransaction() {
     });
 
     const onSubmit = data => {
-        console.log(data);
+        const newTransaction = {
+            id: Date.now(),
+            type: data.type,
+            payee: data.payee,
+            amount: data.type === 'outflow' ? Number(data.amount * -1) : Number(data.amount),
+            category: data.category ? data.category : 'Unknown'
+        }
+        console.log(newTransaction);
+
+        addTransaction(newTransaction);
         reset({payee: '', amount: '', type: 'outflow', category: ''})
     }
 
