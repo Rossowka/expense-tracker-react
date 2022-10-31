@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Balance.module.scss';
+import styles from './../../_base.module.scss';
 
 function Balance({ balance }) {
   return (

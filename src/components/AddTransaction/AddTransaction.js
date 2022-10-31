@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUp, faCircleDown } from '@fortawesome/free-solid-svg-icons'
 
 function AddTransaction() {
-    const { register, handleSubmit, watch } = useForm({
+    const { register, handleSubmit, watch, reset } = useForm({
         defaultValues: {
             type: 'outflow',
             payee: '',
@@ -12,13 +12,11 @@ function AddTransaction() {
             category: ''
         }
     });
-    const onSubmit = data => console.log(data);
 
-    // const payee = watch('payee');
-    // const amount = watch('amount');
-    // const category = watch('category');
-
-    // console.log(payee, amount, category);
+    const onSubmit = data => {
+        console.log(data);
+        reset({payee: '', amount: '', type: 'outflow', category: ''})
+    }
 
     return (
         <div>
@@ -55,7 +53,7 @@ function AddTransaction() {
                 <select {...register('category')}>
                     <option value='' disabled>Category</option>
                     <option value='Income'>Income</option>
-                    <option value='Obligations'>Immediate Obligations</option>
+                    <option value='Immediate Obligations'>Immediate Obligations</option>
                     <option value='True Expenses'>True Expenses</option>
                     <option value='Quality of Life'>Quality of Life</option>
                     <option value='Unknown'>Unknown</option>

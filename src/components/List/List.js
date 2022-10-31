@@ -5,6 +5,7 @@ import { GlobalContext } from '../../context/GlobalState';
 import Icon from './Icon';
 
 import './styles.scss';
+import styles from './../../_base.module.scss';
 
 function List() {
     const { transactions } = useContext(GlobalContext);
@@ -22,7 +23,7 @@ function List() {
                         </div>
                         <div
                             className='money'
-                            style={{color: transaction.amount < 0 ? 'red' : 'green'}}
+                            style={{color: transaction.amount < 0 ? styles.negativeColor : styles.positiveColor}}
                         >
                             <dt>€{transaction.amount}</dt>
                         </div>
