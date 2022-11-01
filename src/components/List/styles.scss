@@ -41,7 +41,7 @@ dd {
     opacity: 0.4;
 }
 
-button {
+.delete {
     border-radius: 50%;
     background-color: #fff;
     color: rgba($negative-color, 0);
@@ -50,4 +50,19 @@ button {
     align-self: center;
     margin-left: 15px;
     border: none;
+}
+
+@media only screen and (max-width: 992px) {
+    .delete {
+        color: rgba($negative-color, 1);
+        position: absolute;
+        right: -25px;
+        width: 40px;
+        height: 40px;
+        box-shadow: $box-shadow;
+    }
+
+    dt {
+        margin-right: 15px;
+    }
 }

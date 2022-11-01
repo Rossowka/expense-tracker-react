@@ -23,7 +23,7 @@ function Transaction({ transaction }) {
                 style={{color: transaction.amount < 0 ? styles.negativeColor : styles.positiveColor}}>
                 <dt>{sign}€{Math.abs(transaction.amount)}</dt>
             </div>
-            <button onClick={() => deleteTransaction(transaction.id)}>
+            <button className='delete' onClick={() => deleteTransaction(transaction.id)}>
                 <FontAwesomeIcon icon={faTrashCan} size="sm"/>
             </button>
         </div>

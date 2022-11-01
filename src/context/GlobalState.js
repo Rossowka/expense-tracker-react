@@ -10,7 +10,7 @@ const initialState = {
     { id: 3, payee: 'Groceries', amount: -150, category: 'True Expenses' },
     { id: 4, payee: 'Gift Card', amount: 25, category: 'Unknown' },
     { id: 5, payee: 'Gym Membership', amount: -30, category: 'Quality of Life' },
-]
+  ]
 }
 
 // Create context
