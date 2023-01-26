@@ -1,5 +1,5 @@
 # Expense tracker in React
 
-### Implemented with initial data
+### Implemented with examplary data
 
-https://master--rossowka-expense-tracker-react.netlify.app
+https://rossowka-expense-tracker-react.netlify.app
